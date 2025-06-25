@@ -1,5 +1,5 @@
 import { http, HttpResponse } from "msw";
-import type { Job } from '../lib/types'
+import type { Job } from '../../utils/types'
 const jobs=[
       {
         jobId: "1",

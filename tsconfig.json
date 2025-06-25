@@ -10,8 +10,12 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+     "types": ["@testing-library/jest-dom" , "jest"],
+     "jsx": "react-jsx", 
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+      "@/*": ["./src/*"],
+      "test-utils": ["./utils/test-utils"]
+    },
+    "esModuleInterop": true
+  },
 }

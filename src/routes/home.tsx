@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { JobCard } from './jobs/jobCard';
-import type { Job } from '../lib/types';
+import type { Job } from '../../utils/types';
 import {
   useQuery,
 } from '@tanstack/react-query'

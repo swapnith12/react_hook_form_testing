@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import type { Job } from '../../../lib/types';
+import type { Job } from '../../../../utils/types';
 
 async function fetchJob(jobId: string): Promise<Job> {
   const res = await fetch(`/api/jobs/${jobId}`);

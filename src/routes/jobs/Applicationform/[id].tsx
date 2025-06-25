@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import { resend } from '../../../lib/resend'
 
 type ApplicationData = {
   fullName: string;
   email: string;
-  resume: FileList; 
+  resume: FileList;
 };
 
 export default function Applicationform() {
@@ -19,9 +20,8 @@ export default function Applicationform() {
     console.log(`Application for job ID: ${id}`);
     console.log("Full Name:", data.fullName);
     console.log("Email:", data.email);
-    console.log("Uploaded Resume File:", data.resume[0]);  
+    console.log("Uploaded Resume File:", data.resume[0]);
 
-    
     await new Promise(res => setTimeout(res, 2000));
 
     setIsSubmitting(false);
@@ -29,7 +29,7 @@ export default function Applicationform() {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-gray-800 text-white rounded-lg shadow-md">
+    <div data-testId="job-application" className="p-6 max-w-lg mx-auto bg-gray-800 text-white rounded-lg shadow-md">
       {!submitted ? (
         <>
           <h1 className="text-2xl font-bold mb-4">Apply for Job ID: {id}</h1>
